@@ -1,12 +1,8 @@
 {
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.formatOnSave": true,
   "eslint.validate": ["javascript", "javascriptreact"],
   "eslint.options": {
-    "extensions": [".html", ".js", ".json", ".vue", ".jsx"]
+    "extensions": [".html", ".js", ".json", ".jsx"]
   },
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
@@ -23,5 +19,5 @@
   "less.validate": false, // Disable built-in lint
   "scss.validate": false, // Disable built-in lint
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "vue", "scss"]
+  "stylelint.validate": ["css", "scss"]
 }
