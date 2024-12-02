@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header/header";
+import Button from "../components/Button/Button";
 
 const Plan = () => {
     return (
@@ -7,7 +8,7 @@ const Plan = () => {
             <Header />
             <div className="text-4xl font-bold">
                 Hello, World!
-            </div>
+                <Button bg={'black'} btnText={'Follow me'} textColor={'white'}/>            </div>
         </div>
     );
 }
