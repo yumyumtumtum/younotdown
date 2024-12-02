@@ -1,0 +1,27 @@
+{
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "eslint.options": {
+    "extensions": [".html", ".js", ".json", ".vue", ".jsx"]
+  },
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.markdownlint": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "workbench.editor.labelFormat": "short",
+  "editor.renderWhitespace": "all",
+  "search.seedOnFocus": true,
+  "editor.tabSize": 2,
+  "css.validate": false, // Disable built-in lint
+  "less.validate": false, // Disable built-in lint
+  "scss.validate": false, // Disable built-in lint
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "vue", "scss"]
+}
