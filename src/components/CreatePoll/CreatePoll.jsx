@@ -4,8 +4,10 @@ import "./CreatePoll.css";
 
 const CreatePoll = () => {
   return (
-    <div className="container">
-      <PollForm />
+    <div className="container-wrapper">
+      <div className="container">
+        <PollForm />
+    </div>
     </div>
   );
 };

@@ -6,13 +6,23 @@ body {
     color: #333;
   }
   
+  .container-wrapper {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding outside the container */
+    background-color: #f9f9f9; /* Background color */
+    box-sizing: border-box; /* Include padding in total size */
+  }
+  
   .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    max-width: 600px; /* Limit container width */
+    width: 100%; /* Allow shrinking on smaller screens */
+    padding: 20px; /* Internal padding for content */
+    background: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
   }
   
   h1, h2 {
