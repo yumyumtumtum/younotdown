@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import NameList from "./NameList";
-import Button from "./Button/Button";
+import NameList from "../NameList/NameList";
 
 const PollForm = () => {
   const [numPeople, setNumPeople] = useState(0);

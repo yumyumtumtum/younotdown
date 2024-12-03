@@ -1,11 +1,10 @@
 import React from "react";
-import PollForm from "../components/PollForm";
-import Header from "../components/Header/header";
+import PollForm from "../PollForm/PollForm";
+import "./CreatePoll.css";
 
 const CreatePoll = () => {
   return (
-    <div>
-      <Header />
+    <div className="container">
       <PollForm />
     </div>
   );

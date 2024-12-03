@@ -1,11 +1,15 @@
 import React from "react";
+import CreatePoll from "../components/CreatePoll/CreatePoll";
+import Header from "../components/Header/header";
 
-function Home() {
-    return(
-        <div class>
-            <h1> Hello, World!</h1>
-        </div>
-    )
-}
+
+const Home = () => {
+  return (
+    <div>
+      <Header />
+      <CreatePoll />
+    </div>
+  );
+};
 
 export default Home;
