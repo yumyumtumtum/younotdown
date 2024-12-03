@@ -1,7 +1,6 @@
-import React from "react";
-import CreatePoll from "../components/CreatePoll/CreatePoll";
-import Header from "../components/Header/header";
-
+import React from 'react'
+import CreatePoll from '../components/CreatePoll/CreatePoll'
+import Header from '../components/Header/header'
 
 const Home = () => {
   return (
@@ -9,7 +8,7 @@ const Home = () => {
       <Header />
       <CreatePoll />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
