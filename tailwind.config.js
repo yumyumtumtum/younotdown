@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'app-bg': "url('/younotdown.webp')",
+      },
       colors: {
           
         'black': '#000000',

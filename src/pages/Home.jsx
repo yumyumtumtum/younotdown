@@ -4,7 +4,7 @@ import Header from '../components/Header/header'
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-app-background bg-cover bg-center min-h-screen">
       <Header />
       <CreatePoll />
     </div>

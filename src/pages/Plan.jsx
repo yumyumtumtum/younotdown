@@ -6,7 +6,7 @@ const Plan = () => {
   return (
     <div>
       <Header />
-      <div className="text-4xl font-bold">
+      <div className="bg-app-background bg-cover bg-center min-h-screen text-center text-4xl font-bold">
         Hello, World!
         <Button bg={'black'} btnText={'Follow me'} textColor={'white'} />{' '}
       </div>
