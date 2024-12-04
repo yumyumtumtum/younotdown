@@ -1,5 +1,3 @@
-import React from 'react'
-
 function NameInput({ index, value, onChange }) {
   return (
     <div>

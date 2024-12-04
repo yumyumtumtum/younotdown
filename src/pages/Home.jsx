@@ -1,4 +1,3 @@
-import React from 'react'
 import CreatePoll from '../components/CreatePoll/CreatePoll'
 
 function Home() {
