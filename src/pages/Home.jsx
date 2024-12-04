@@ -1,6 +1,5 @@
 import React from 'react'
 import CreatePoll from '../components/CreatePoll/CreatePoll'
-import Header from '../components/Header/Header'
 
 function Home() {
   return (
