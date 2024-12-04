@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const NameInput = ({ index, value, onChange }) => {
+function NameInput({ index, value, onChange }) {
   return (
     <div>
-      <label htmlFor={`name-${index}`}>Person {index + 1}:</label>
+      <label htmlFor={`name-${index}`}> Person{index + 1}: </label>
       <input
         id={`name-${index}`}
         type="text"
@@ -11,7 +11,7 @@ const NameInput = ({ index, value, onChange }) => {
         onChange={(e) => onChange(index, e.target.value)}
       />
     </div>
-  );
-};
+  )
+}
 
-export default NameInput;
+export default NameInput

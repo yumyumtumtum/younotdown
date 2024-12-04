@@ -1,20 +1,19 @@
-import React from "react";
-import NameInput from "../NameInput/NameInput";
+import NameInput from '../NameInput/NameInput'
 
-const NameList = ({ numPeople, names, onNameChange }) => {
+function NameList({ numPeople, names, onNameChange }) {
   return (
     <div>
       <h2>Enter Names:</h2>
       {Array.from({ length: numPeople }).map((_, index) => (
         <NameInput
-          key={index}
+          key={`i${index}`}
           index={index}
-          value={names[index] || ""}
+          value={names[index] || ''}
           onChange={onNameChange}
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default NameList;
+export default NameList

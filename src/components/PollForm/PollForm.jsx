@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import NameList from "../NameList/NameList";
+import React, { useState } from 'react'
+import NameList from '../NameList/NameList'
 
-const PollForm = () => {
-  const [numPeople, setNumPeople] = useState(0);
-  const [names, setNames] = useState([]);
-  const [pollCreated, setPollCreated] = useState(false);
+function PollForm() {
+  const [numPeople, setNumPeople] = useState(0)
+  const [names, setNames] = useState([])
+  const [pollCreated, setPollCreated] = useState(false)
 
- // Function to handle number of people changes
+  // Function to handle number of people changes
   const handleNumPeopleChange = (e) => {
-    const value = parseInt(e.target.value, 10) || 0;
-    setNumPeople(value);
-    setNames(Array(value).fill(""));
-  };
+    const value = parseInt(e.target.value, 10) || 0
+    setNumPeople(value)
+    setNames(Array(value).fill(''))
+  }
 
   // Function to handle name changes
   const handleNameChange = (index, newName) => {
-    const updatedNames = [...names];
-    updatedNames[index] = newName;
-    setNames(updatedNames);
-  };
+    const updatedNames = [...names]
+    updatedNames[index] = newName
+    setNames(updatedNames)
+  }
 
   // Function to create the poll and set pollCreated to true
   const handleCreatePoll = () => {
-    if (names.every((name) => name.trim() !== "")) {
-      console.log("Poll created with names:", names);
-      setPollCreated(true);
+    if (names.every((name) => name.trim() !== '')) {
+      console.log('Poll created with names:', names)
+      setPollCreated(true)
     } else {
-      alert("Please fill out all name fields.");
+      alert('Please fill out all name fields.')
     }
-  };
+  }
 
   return (
     <div>
@@ -68,7 +68,7 @@ const PollForm = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default PollForm;
+export default PollForm

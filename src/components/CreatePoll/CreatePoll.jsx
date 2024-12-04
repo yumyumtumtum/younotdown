@@ -1,15 +1,15 @@
-import React from "react";
-import PollForm from "../PollForm/PollForm";
-import "./CreatePoll.css";
+import React from 'react'
+import PollForm from '../PollForm/PollForm'
+import './CreatePoll.css'
 
-const CreatePoll = () => {
+function CreatePoll() {
   return (
     <div className="container-wrapper">
       <div className="container">
         <PollForm />
+      </div>
     </div>
-    </div>
-  );
-};
+  )
+}
 
-export default CreatePoll;
+export default CreatePoll
