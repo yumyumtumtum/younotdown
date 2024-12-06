@@ -1,4 +1,4 @@
-import Header from '../components/header/Header'
+import Header from '../components/header/Title'
 import CreatePoll from '../components/CreatePoll/CreatePoll'
 
 function Home() {
