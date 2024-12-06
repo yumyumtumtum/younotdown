@@ -1,9 +1,11 @@
-import React from 'react'
+import Header from '../components/header/Header'
+import CreatePoll from '../components/CreatePoll/CreatePoll'
 
-const Home = () => {
+function Home() {
   return (
-    <div className=" ">
-      <h1> Hello, World!</h1>
+    <div className="bg-app-background bg-cover bg-center min-h-screen">
+      <Header />
+      <CreatePoll />
     </div>
   )
 }

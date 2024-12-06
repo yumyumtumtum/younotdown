@@ -5,8 +5,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'app-bg': "url('/younotdown.webp')",
+      },
+      colors: {
+          
+        'black': '#000000',
+      },
   },
   plugins: [],
 }
-
+}
