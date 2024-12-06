@@ -1,3 +1,4 @@
+import Header from '../components/header/Header'
 import CreatePoll from '../components/CreatePoll/CreatePoll'
 
 function Home() {
