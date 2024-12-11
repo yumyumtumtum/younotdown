@@ -1,4 +1,4 @@
-const CreatePollButton = () => {
+function CreatePollButton() {
   return (
     <div>
       <button type="button">Create Poll</button>
