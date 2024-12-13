@@ -20,6 +20,23 @@ function Components() {
         <Button secondary medium>
           Regular Secondary Button
         </Button>
+
+        <Button tertiary small>
+          Small tertiary Button
+        </Button>
+        <Button tertiary>Regular tertiary Button</Button>
+        <Button tertiary medium>
+          Regular tertiary Button
+        </Button>
+
+        <Button success>Success Button</Button>
+        <Button danger>Danger Button</Button>
+        <Button warning>Warning Button</Button>
+        <Button info>Info Button</Button>
+
+        <Button primary disabled>
+          Info Button
+        </Button>
       </Card>
     </div>
   )

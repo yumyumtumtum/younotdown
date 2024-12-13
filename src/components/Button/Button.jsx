@@ -1,39 +1,70 @@
-// eslint-disable-next-line object-curly-newline
-function Button({ children, small, medium, secondary }) {
-  // eslint-disable-next-line operator-linebreak
-  let className = 'w-fit  border-solid border '
+import clsx from 'clsx'
 
-  if (small) {
-    className += ' py-0 px-1 text-sm rounded-sm '
-  }
+// Centralized configuration for button variants
+const variantMap = {
+  small: 'w-fit py-0 px-1 text-sm rounded-sm',
+  medium: 'w-fit py-0.5 px-2 text-base rounded-sm',
+  large: 'w-fit py-2 px-4 text-lg rounded-md',
+  primary:
+    'bg-blue-900 text-white border border-blue-900 hover:bg-blue-600 active:bg-blue-400',
+  secondary:
+    'bg-blue-100 text-black border border-blue-200 hover:bg-blue-300 active:bg-blue-400',
+  tertiary:
+    'bg-transparent text-blue-900 border border-transparent hover:bg-blue-50 active:bg-blue-100',
+  success:
+    'bg-green-500 text-white border border-green-500 hover:bg-green-600 active:bg-green-400',
+  warning:
+    'bg-yellow-500 text-white border border-yellow-500 hover:bg-yellow-600 active:bg-yellow-400',
+  danger:
+    'bg-red-500 text-white border border-red-500 hover:bg-red-600 active:bg-red-400',
+  info: 'bg-blue-400 text-white border border-blue-400 hover:bg-blue-600 active:bg-blue-400',
+  disabled: 'opacity-50 cursor-not-allowed',
+  enabled: 'hover:opacity-90',
+}
 
-  if (!small && !medium) {
-    // Regular - Default
-    className += ' py-0.5 px-2 rounded-sm '
-  }
+function Button({
+  children,
+  small,
+  // eslint-disable-next-line no-unused-vars
+  medium,
+  large,
+  secondary,
+  tertiary,
+  success,
+  warning,
+  danger,
+  info,
+  disabled = false,
+  icon: Icon,
+  className,
+  // ...props
+}) {
+  // Determine the size class with a clear default
+  const buttonClasses = clsx({
+    [variantMap.small]: small,
+    [variantMap.medium]: !small && !large, // Default to medium
+    [variantMap.large]: large,
+    [variantMap.primary]: !secondary && !tertiary, // Default to primary
+    [variantMap.secondary]: secondary,
+    [variantMap.tertiary]: tertiary,
+    [variantMap.success]: success,
+    [variantMap.warning]: warning,
+    [variantMap.danger]: danger,
+    [variantMap.info]: info,
+    [variantMap.disabled]: disabled,
+    [variantMap.enabled]: !disabled,
+  })
 
-  if (medium) {
-    className += ' py-2 px-4 text-lg rounded-md '
-  }
-
-  if (!secondary) {
-    className += `
-      border-blue-900 
-      text-white  
-      bg-blue-900 hover:bg-blue-600 active:bg-blue-400
-    `
-  }
-
-  if (secondary) {
-    className += `
-      border-blue-200 
-      text-black  
-      bg-blue-100 hover:bg-blue-300 active:bg-blue-400
-    `
-  }
+  // Base classes for all buttons
+  const baseClasses = //eslint-disable-line
+    'inline-flex items-center justify-center font-medium focus:outline-none transition'
 
   return (
-    <button className={className} type="button">
+    <button
+      className={clsx(baseClasses, buttonClasses, className)}
+      disabled={disabled}
+    >
+      {Icon && <Icon className="mr-2 w-5 h-5" />}
       {children}
     </button>
   )
