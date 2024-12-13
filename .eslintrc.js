@@ -9,6 +9,7 @@ module.exports = {
   rules: {
     quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'never'],
+    'import/no-named-as-default': 0,
     'react/jxs/use-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/forbid-prop-types': 0,
