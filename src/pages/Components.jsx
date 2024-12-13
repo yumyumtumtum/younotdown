@@ -11,7 +11,7 @@ function Components() {
 
         <Button small>Small Button</Button>
         <Button>Regular Button</Button>
-        <Button large>Regular Button</Button>
+        <Button medium>Regular Button</Button>
 
         <Button secondary small>
           Small Secondary Button
@@ -41,4 +41,5 @@ function Components() {
     </div>
   )
 }
+
 export default Components
