@@ -63,7 +63,11 @@ function Button({
   })
 
   // Determine the contextual class
-  const contextualClass = clsx({
+variantMap = {
+    small: 'w-fit py-0 px-1 text-sm rounded-sm',
+    medium: 'w-fit py-0.5 px-2 text-base rounded-sm',
+    large: 'w-fit py-2 px-4 text-lg rounded-md',
+},
     [variantMap.contextual.success]: success,
     [variantMap.contextual.warning]: warning,
     [variantMap.contextual.danger]: danger,
