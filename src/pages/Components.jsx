@@ -33,6 +33,10 @@ function Components() {
         <Button danger>Danger Button</Button>
         <Button warning>Warning Button</Button>
         <Button info>Info Button</Button>
+
+        <Button primary disabled>
+          Info Button
+        </Button>
       </Card>
     </div>
   )
