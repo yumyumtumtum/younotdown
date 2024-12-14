@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import NameList from '../NameList/NameList'
+import Button from '../Button/Button'
 
 function PollForm() {
   const [numPeople, setNumPeople] = useState(0)
@@ -49,12 +50,9 @@ function PollForm() {
         onNameChange={handleNameChange}
       />
 
-      <button
-        onClick={handleCreatePoll}
-        className="bg-black py-4 px-7 text-white rounded hover:bg-blue-600 transition duration-300"
-      >
+      <Button onClick={handleCreatePoll} success>
         Create Poll
-      </button>
+      </Button>
 
       {pollCreated && (
         <div>
