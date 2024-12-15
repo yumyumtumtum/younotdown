@@ -21,6 +21,9 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/no-array-index-key': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    'operator-linebreak': ['error', 'after'],
+    'react/jsx-max-props-per-line': [2, { maximum: 1, when: 'multiline' }],
+    // 'max-len': ['error', { code: 100 }],
   },
   settings: {
     react: {

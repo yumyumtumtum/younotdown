@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.rules": ["always"],
   "eslint.validate": ["javascript", "javascriptreact"],
   "eslint.options": {
     "extensions": [".html", ".js", ".json", ".jsx"]
