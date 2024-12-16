@@ -25,8 +25,6 @@ const variantMap = {
 function Button({
   children,
   small,
-  // eslint-disable-next-line no-unused-vars
-  medium,
   large,
   secondary,
   tertiary,
@@ -56,7 +54,7 @@ function Button({
   })
 
   // Base classes for all buttons
-  const baseClasses = //eslint-disable-line
+  const baseClasses =
     'inline-flex items-center justify-center font-medium focus:outline-none transition'
 
   return (
