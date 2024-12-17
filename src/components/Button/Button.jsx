@@ -2,9 +2,9 @@ import clsx from 'clsx'
 
 // Centralized configuration for button variants
 const variantMap = {
-  small: 'w-fit py-0 px-1 text-sm rounded-sm',
-  medium: 'w-fit py-0.5 px-2 text-base rounded-sm',
-  large: 'w-fit py-2 px-4 text-lg rounded-md',
+  small: 'py-0 px-1 text-sm rounded-sm',
+  medium: 'py-0.5 px-2 text-base rounded-sm',
+  large: 'py-2 px-4 text-lg rounded-md',
   primary:
     'bg-blue-900 text-white border border-blue-900 hover:bg-blue-600 active:bg-blue-400',
   secondary:
@@ -35,7 +35,7 @@ function Button({
   disabled = false,
   icon: Icon,
   className,
-  // ...props
+  onClick,
 }) {
   // Determine the size class with a clear default
   const buttonClasses = clsx({
@@ -55,12 +55,13 @@ function Button({
 
   // Base classes for all buttons
   const baseClasses =
-    'inline-flex items-center justify-center font-medium focus:outline-none transition'
+    'w-fit inline-flex items-center justify-center font-medium focus:outline-none transition'
 
   return (
     <button
       className={clsx(baseClasses, buttonClasses, className)}
       disabled={disabled}
+      onClick={onClick}
     >
       {Icon && <Icon className="mr-2 w-5 h-5" />}
       {children}

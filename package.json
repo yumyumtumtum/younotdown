@@ -2,25 +2,26 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "clsx": "^2.1.1",
+    "minimatch": "^10.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
     "react-scripts": "^5.0.1",
     "tailwindcss": "^3.4.15",
+    "vite": "^6.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.js\"",
-    "lint": "eslint src"
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@babel/preset-react": "^7.25.9",
+    "@ehutch79/vite-eslint": "^0.0.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
@@ -54,7 +56,10 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "fast-glob": "^3.3.2",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.4.1"
+    "prettier": "^3.4.1",
+    "unplugin-auto-import": "^0.19.0",
+    "unplugin-react-components": "^0.1.4"
   }
 }

@@ -23,6 +23,7 @@ function PollForm() {
 
   // Function to create the poll and set pollCreated to true
   const handleCreatePoll = () => {
+    console.log(names)
     if (names.every((name) => name.trim() !== '')) {
       console.log('Poll created with names:', names)
       setPollCreated(true)

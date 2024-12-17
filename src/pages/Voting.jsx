@@ -1,11 +1,3 @@
-import Header from '../components/header/Title'
-import Button from '../components/Button/Button'
-
-/** ***********  ✨ Codeium Command ⭐  ************ */
-/**
- * Page: YouDown
- * Description: This is the page where people choose if they are down or not
-/** ****  01d50298-3648-4dd2-b691-cfd4efcc1fbb  ****** */
 function YouDown() {
   return (
     <div>

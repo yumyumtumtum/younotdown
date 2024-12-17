@@ -1,6 +1,3 @@
-import Header from '../components/header/Title'
-import Button from '../components/Button/Button'
-
 function Plan() {
   return (
     <div>
