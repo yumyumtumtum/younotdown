@@ -47,3 +47,9 @@ h5 {
 h6 {
   line-height: 0.5rem;
 }
+
+.center-center {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+}
