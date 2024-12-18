@@ -1,11 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
 .container-wrapper {
   display: flex; /* Enable Flexbox */
   justify-content: center; /* Center the container horizontally */
@@ -14,67 +6,75 @@ body {
   padding: 20px; /* Padding outside the container */
   background-color: #f9f9f9; /* Background color */
   box-sizing: border-box; /* Include padding in total size */
-}
 
-.container {
-  max-width: 600px; /* Limit container width */
-  width: 100%; /* Allow shrinking on smaller screens */
-  padding: 20px; /* Internal padding for content */
-  background: #ffffff; /* White background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
 
-h1,
-h2 {
-  text-align: center;
-  color: #555;
-}
-
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
-}
-
-input[type='text'],
-input[type='number'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  background: #f1f1f1;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-}
-
-.success-message {
-  text-align: center;
-  margin-top: 20px;
-  color: green;
-  font-weight: bold;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
   .container {
-    padding: 10px;
-    margin: 10px;
+    max-width: 600px; /* Limit container width */
+    width: 100%; /* Allow shrinking on smaller screens */
+    padding: 20px; /* Internal padding for content */
+    background: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
   }
 
   h1,
   h2 {
-    font-size: 20px;
+    text-align: center;
+    color: #555;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul li {
+    background: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+  .success-message {
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    h1,
+    h2 {
+      font-size: 20px;
+    }
   }
 }

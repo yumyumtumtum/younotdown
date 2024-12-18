@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
 import Home from './pages/Home'
 import Plan from './pages/Plan'
 import Voting from './pages/Voting'
@@ -9,6 +10,7 @@ function Main() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/Plan" element={<Plan />} />
         <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Voting" element={<Voting />} />
