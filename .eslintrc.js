@@ -24,6 +24,9 @@ module.exports = {
     'operator-linebreak': ['error', 'after'],
     'react/jsx-max-props-per-line': [2, { maximum: 1, when: 'multiline' }],
     // 'max-len': ['error', { code: 100 }],
+    'import/no-extraneous-dependencies': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'function-paren-newline': 'off',
   },
   settings: {
     react: {

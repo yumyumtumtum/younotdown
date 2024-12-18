@@ -1,6 +1,3 @@
-import Button from '../components/Button/Button'
-import Card from '../components/layout/Card'
-
 function Components() {
   return (
     <div className="py-12 px-24 flex flex-col gap-y-8">
