@@ -3,9 +3,7 @@ function Components() {
     <div className="py-12 px-24 flex flex-col gap-y-8">
       <div className="text-xl font-bold">Components</div>
 
-      <Card>
-        <div className="text-lg">Base Elements</div>
-
+      <Card label="Base Elements">
         <h1> Header 1 </h1>
         <h2> Header 2 </h2>
         <h3> Header 3 </h3>
@@ -14,7 +12,7 @@ function Components() {
         <h6> Header 6 </h6>
       </Card>
 
-      <Card>
+      <Card label="Buttons">
         <div className="text-lg ">Buttons</div>
 
         <Button small>Small Button</Button>
