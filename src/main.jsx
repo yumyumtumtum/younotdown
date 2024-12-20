@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Plan from './pages/Plan'
 import Voting from './pages/Voting'
 import Components from './pages/Components'
+import Db from './pages/Db'
 
 function Main() {
   return (
@@ -15,6 +16,7 @@ function Main() {
         <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Voting" element={<Voting />} />
         <Route exact path="/Components" element={<Components />} />
+        <Route exact path="/Db" element={<Db />} />
       </Routes>
     </BrowserRouter>
   )
