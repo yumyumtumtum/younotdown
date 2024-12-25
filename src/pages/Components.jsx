@@ -18,32 +18,52 @@ function Components() {
         <table className="table-fixed mb-20 border-separate border-spacing-y-3">
           <thead>
             <tr>
-              <th className='text-left'>Type</th>
+              <th className='text-left'></th>
               <th className='text-left'>Small</th>
               <th className='text-left'>Medium</th>
               <th className='text-left'>Large</th>
+              <th className='text-left'>Disabled</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Primary</td>
-              <td><Button small>Small Button</Button></td>
-              <td><Button>Regular Button</Button></td>
-              <td><Button medium>Regular Button</Button></td>
+              <th>Primary</th>
+              <td><Button small>Small Primary Button</Button></td>
+              <td><Button>Regular Primary Button</Button></td>
+              <td><Button medium>Large Primary Button</Button></td>
+              <td><Button disabled>Disabled Regular Primary</Button></td>
             </tr>
             <tr>
-              <td>Secondary</td>
+              <th>Secondary</th>
               <td><Button secondary small>Small Secondary Button</Button></td>
               <td><Button secondary>Regular Secondary Button</Button></td>
-              <td><Button secondary medium>Regular Secondary Button</Button></td>
+              <td><Button secondary medium>Large Secondary Button</Button></td>
+              <td><Button secondary disabled>Disabled Regular Secondary</Button></td>
+
             </tr>
             <tr>
-              <td>Miscellaneous</td>
-              <td><Button success>Success Button</Button></td>
-              <td><Button danger>Danger Button</Button></td>
-              <td><Button warning>Warning Button</Button></td>
-              <td><Button info>Info Button</Button></td>
-              <td><Button primary disabled>Info Button</Button></td>
+              <th>Success</th>
+              <td><Button success small>Small Success Button</Button></td>
+              <td><Button success>Regular Success Button</Button></td>
+              <td><Button success medium>Large Success Button</Button></td>
+              <td><Button success disabled> Disabled Regular Success</Button></td>
+
+            </tr>
+            <tr>
+              <th>Danger</th>
+              <td><Button danger small>Small Danger Button</Button></td>
+              <td><Button danger>Regular Danger Button</Button></td>
+              <td><Button danger medium>Large Danger Button</Button></td>
+              <td><Button danger disabled>Disabled Regular Danger</Button></td>
+
+            </tr>
+            <tr>
+              <th>Warning</th>
+              <td><Button warning small>Small Warning Button</Button></td>
+              <td><Button warning>Regular Warning Button</Button></td>
+              <td><Button warning medium>Large Warning Button</Button></td>
+              <td><Button warning disabled>Disabled Regular Warning</Button></td>
+
             </tr>
           </tbody>
         </table>
