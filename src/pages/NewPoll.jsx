@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import NameList from '../components/NameList/NameList'
 
-function Poll() {
+function NewPoll() {
   const [pollType, setPollType] = useState('one')
-  const [partySize, setpartySize] = useState(1)
+  const [partySize, setPartySize] = useState(1)
   const [names, setNames] = useState([])
 
   const handleNameChange = (index, newName) => {
@@ -16,7 +15,7 @@ function Poll() {
     const newNames = [...names]
     newNames.splice(index, 1)
     setNames(newNames)
-    setpartySize(partySize - 1)
+    setPartySize(partySize - 1)
   }
 
   const POLL_TABS = [
@@ -45,7 +44,7 @@ function Poll() {
             className="mb-4"
             small
             secondary
-            onClick={() => setpartySize(partySize + 1)}
+            onClick={() => setPartySize(partySize + 1)}
           >
             Add Person
           </Button>
@@ -68,4 +67,4 @@ function Poll() {
   )
 }
 
-export default Poll
+export default NewPoll
