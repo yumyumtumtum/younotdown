@@ -29,7 +29,7 @@ function Tabs({ children, tabs = ['default'] }) {
   return (
     <div className="p-4">
       <div className="flex center-center">{tabElements}</div>
-      <div className="border-t-2 border-eggwhite-20 -mt-1"></div>
+      <div className="border-t-2 border-eggwhite-20 -mt-0.5"></div>
       {children}
     </div>
   )
