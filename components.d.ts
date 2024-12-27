@@ -4,6 +4,7 @@ declare global{
 	const App: typeof import('./src/App')['default']
 	const Main: typeof import('./src/main')['default']
 	const Components: typeof import('./src/pages/Components')['default']
+	const Db: typeof import('./src/pages/Db')['default']
 	const Home: typeof import('./src/pages/Home')['default']
 	const LandingPage: typeof import('./src/pages/LandingPage')['default']
 	const Plan: typeof import('./src/pages/Plan')['default']
