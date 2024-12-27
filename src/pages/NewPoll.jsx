@@ -16,6 +16,7 @@ function Poll() {
     const newNames = [...names]
     newNames.splice(index, 1)
     setNames(newNames)
+    setpartySize(partySize - 1)
   }
 
   const POLL_TABS = [
