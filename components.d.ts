@@ -11,10 +11,10 @@ declare global{
 	const Button: typeof import('./src/components/Button/Button')['default']
 	const CreatePollButton: typeof import('./src/components/Button/CreatePollButton')['default']
 	const CreatePoll: typeof import('./src/components/CreatePoll/CreatePoll')['default']
-	const Card: typeof import('./src/components/Layout/Card')['default']
-	const Page: typeof import('./src/components/Layout/Page')['default']
 	const NameInput: typeof import('./src/components/NameInput/NameInput')['default']
 	const NameList: typeof import('./src/components/NameList/NameList')['default']
 	const PollForm: typeof import('./src/components/PollForm/PollForm')['default']
 	const Header: typeof import('./src/components/header/Title')['default']
+	const Card: typeof import('./src/components/layout/Card')['default']
+	const Page: typeof import('./src/components/layout/Page')['default']
 }
