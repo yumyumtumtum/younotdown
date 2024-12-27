@@ -1,5 +1,8 @@
 function Poll() {
-  const POLL_TABS = ['Poll Details', 'Party']
+  const POLL_TABS = [
+    { name: 'Poll Details', content: <div> hey </div> },
+    { name: 'Party' },
+  ]
 
   return (
     <div className="">
