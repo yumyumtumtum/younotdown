@@ -14,7 +14,7 @@ function Tabs({ children, tabs = ['default'] }) {
               activeTab === tab,
             'border-transparent border-2': activeTab !== tab,
           }),
-          ' py-2 px-8 cursor-pointer hover:bg-eggwhite-10 active:bg-eggwhite-20 overflow-hidden',
+          'rounded-t-lg py-2 px-8 cursor-pointer hover:bg-eggwhite-10 active:bg-eggwhite-20 overflow-hidden',
         )}
         key={tab}
         onClick={() => {
