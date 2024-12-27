@@ -33,7 +33,8 @@ function Tabs({ tabs = [{ name: 'default', content: <div> default </div> }] }) {
     <div className="p-4">
       <div className="flex center-center">{tabElements}</div>
       <div className="border-t-2 border-eggwhite-20 -mt-0.5"></div>
-      {currentContent}
+
+      <div className="m-auto center-center my-8">{currentContent}</div>
     </div>
   )
 }
