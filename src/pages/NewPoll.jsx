@@ -1,7 +1,22 @@
 import { useState } from 'react'
+import NameList from '../components/NameList/NameList'
 
 function Poll() {
   const [pollType, setPollType] = useState('one')
+  const [partySize, setpartySize] = useState(1)
+  const [names, setNames] = useState([])
+
+  const handleNameChange = (index, newName) => {
+    const updatedNames = [...names]
+    updatedNames[index] = newName
+    setNames(updatedNames)
+  }
+
+  const onDelete = (index) => {
+    const newNames = [...names]
+    newNames.splice(index, 1)
+    setNames(newNames)
+  }
 
   const POLL_TABS = [
     {
@@ -21,7 +36,28 @@ function Poll() {
         </div>
       ),
     },
-    { name: 'Party' },
+    {
+      name: 'Party',
+      content: (
+        <div>
+          <Button
+            className="mb-4"
+            small
+            secondary
+            onClick={() => setpartySize(partySize + 1)}
+          >
+            Add Person
+          </Button>
+
+          <NameList
+            numPeople={partySize}
+            names={names}
+            onNameChange={handleNameChange}
+            onDelete={onDelete}
+          />
+        </div>
+      ),
+    },
   ]
 
   return (
