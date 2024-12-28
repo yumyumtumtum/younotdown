@@ -6,8 +6,8 @@ function LandingPage() {
       <div className="border-solid border-2 border-cyan-950 p-96 rounded-3xl flex-col center-center gap-10">
         <h1> You not down </h1>
 
-        <Link to="/home">
-          <Button large> Start a Poll </Button>
+        <Link to="/newpoll">
+          <Button large> See Who's Not Down </Button>
         </Link>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import NameInput from '../NameInput/NameInput'
 
-function NameList({ numPeople, names, onNameChange }) {
+function NameList({ numPeople, names, onNameChange, onDelete }) {
   return (
-    <div>
-      <h2>Enter Names:</h2>
+    <div className="flex flex-col gap-3">
       {Array.from({ length: numPeople }).map((_, index) => (
         <NameInput
           key={`i${index}`}
           index={index}
           value={names[index] || ''}
           onChange={onNameChange}
+          onDelete={onDelete}
         />
       ))}
     </div>
