@@ -2,15 +2,14 @@ import { useState, useMemo } from 'react'
 
 import clsx from 'clsx'
 
-function Tabs({
-  tabOptions = [{ name: 'default', content: <div> default </div> }],
-}) {
+function Tabs({ tabOptions }) {
   const [activeTab, setActiveTab] = useState(tabOptions[0]?.name)
+
   const currentContent = useMemo(() => {
-    return tabOptions.find((tab) => tab.name === activeTab)?.content
+    return tabOptions.find((tabOption) => tabOption.name === activeTab)?.content
   })
 
-  const tabElements = tabOptions.map((tab) => {
+  const tabElements = tabOptions.map((tabOption) => {
     return (
       <div
         className={clsx(
@@ -21,12 +20,12 @@ function Tabs({
           }),
           'rounded-t-lg py-2 px-8 cursor-pointer hover:bg-eggwhite-10 active:bg-eggwhite-20 overflow-hidden',
         )}
-        key={tab.name}
+        key={tabOption.name}
         onClick={() => {
-          setActiveTab(tab.name)
+          setActiveTab(tabOption.name)
         }}
       >
-        {tab.name}
+        {tabOption.name}
       </div>
     )
   })
