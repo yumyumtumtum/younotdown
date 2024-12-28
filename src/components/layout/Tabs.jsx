@@ -15,8 +15,8 @@ function Tabs({ tabOptions }) {
         className={clsx(
           clsx({
             'bg-eggwhite-0 border-eggwhite-20 border-2 border-b-eggwhite-0 hover:bg-eggwhite-0 hover:text-primary-30 active:text-primary-60':
-              activeTab === tab.name,
-            'border-transparent border-2': activeTab !== tab.name,
+              activeTab === tabOption.name,
+            'border-transparent border-2': activeTab !== tabOption.name,
           }),
           'rounded-t-lg py-2 px-8 cursor-pointer hover:bg-eggwhite-10 active:bg-eggwhite-20 overflow-hidden',
         )}
