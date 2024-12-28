@@ -10,6 +10,7 @@ declare global{
 	const NewPoll: typeof import('./src/pages/NewPoll')['default']
 	const Plan: typeof import('./src/pages/Plan')['default']
 	const YouDown: typeof import('./src/pages/Voting')['default']
+	const Testing: typeof import('./src/pages/testing')['default']
 	const Button: typeof import('./src/components/Button/Button')['default']
 	const CreatePollButton: typeof import('./src/components/Button/CreatePollButton')['default']
 	const CreatePoll: typeof import('./src/components/CreatePoll/CreatePoll')['default']

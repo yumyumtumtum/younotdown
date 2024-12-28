@@ -62,7 +62,7 @@ function NewPoll() {
 
   return (
     <div className="">
-      <Tabs tabs={POLL_TABS} />
+      <Tabs tabOptions={POLL_TABS} />
     </div>
   )
 }

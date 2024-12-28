@@ -2,13 +2,15 @@ import { useState, useMemo } from 'react'
 
 import clsx from 'clsx'
 
-function Tabs({ tabs = [{ name: 'default', content: <div> default </div> }] }) {
-  const [activeTab, setActiveTab] = useState(tabs[0].name)
+function Tabs({
+  tabOptions = [{ name: 'default', content: <div> default </div> }],
+}) {
+  const [activeTab, setActiveTab] = useState(tabOptions[0]?.name)
   const currentContent = useMemo(() => {
-    return tabs.find((tab) => tab.name === activeTab)?.content
+    return tabOptions.find((tab) => tab.name === activeTab)?.content
   })
 
-  const tabElements = tabs.map((tab) => {
+  const tabElements = tabOptions.map((tab) => {
     return (
       <div
         className={clsx(
