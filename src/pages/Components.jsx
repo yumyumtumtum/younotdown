@@ -1,4 +1,9 @@
 function Components() {
+  const BUTTON_SIZES = ['small', 'medium', 'large']
+
+  const capitalizedSizes = BUTTON_SIZES.map((size) => size.toUpperCase())
+  console.log(capitalizedSizes)
+
   return (
     <div className="py-12 px-24 flex flex-col gap-y-8">
       <div className="text-xl font-bold">Components</div>
@@ -27,7 +32,7 @@ function Components() {
           </thead>
           <tbody>
             <tr>
-              <th class="text-right pr-4">Primary</th>
+              <th className="text-right pr-4">Primary</th>
               <td>
                 <Button small>Small Primary Button</Button>
               </td>
@@ -42,7 +47,7 @@ function Components() {
               </td>
             </tr>
             <tr>
-              <th class="text-right pr-4">Secondary</th>
+              <th className="text-right pr-4">Secondary</th>
               <td>
                 <Button secondary small>
                   Small Secondary Button
@@ -63,7 +68,7 @@ function Components() {
               </td>
             </tr>
             <tr>
-              <th class="text-right pr-4">Success</th>
+              <th className="text-right pr-4">Success</th>
               <td>
                 <Button success small>
                   Small Success Button
@@ -85,7 +90,7 @@ function Components() {
               </td>
             </tr>
             <tr>
-              <th class="text-right pr-4">Danger</th>
+              <th className="text-right pr-4">Danger</th>
               <td>
                 <Button danger small>
                   Small Danger Button
@@ -106,7 +111,7 @@ function Components() {
               </td>
             </tr>
             <tr>
-              <th class="text-right pr-4">Warning</th>
+              <th className="text-right pr-4">Warning</th>
               <td>
                 <Button warning small>
                   Small Warning Button
