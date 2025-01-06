@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from '../components/Button/Button'
 
 function NewPoll() {
   const [pollType, setPollType] = useState('one')
@@ -55,6 +56,10 @@ function NewPoll() {
             onNameChange={handleNameChange}
             onDelete={onDelete}
           />
+
+          <Button className="mb-5" p-2 medium small success onClick={() => {}}>
+            Submit
+          </Button>
         </div>
       ),
     },
