@@ -30,14 +30,14 @@ function Components() {
               <th>Primary</th>
               <td><Button small>Small Primary Button</Button></td>
               <td><Button>Regular Primary Button</Button></td>
-              <td><Button medium>Large Primary Button</Button></td>
+              <td><Button large>Large Primary Button</Button></td>
               <td><Button disabled>Disabled Regular Primary</Button></td>
             </tr>
             <tr>
               <th>Secondary</th>
               <td><Button secondary small>Small Secondary Button</Button></td>
               <td><Button secondary>Regular Secondary Button</Button></td>
-              <td><Button secondary medium>Large Secondary Button</Button></td>
+              <td><Button secondary large>Large Secondary Button</Button></td>
               <td><Button secondary disabled>Disabled Regular Secondary</Button></td>
 
             </tr>
@@ -45,7 +45,7 @@ function Components() {
               <th>Success</th>
               <td><Button success small>Small Success Button</Button></td>
               <td><Button success>Regular Success Button</Button></td>
-              <td><Button success medium>Large Success Button</Button></td>
+              <td><Button success large>Large Success Button</Button></td>
               <td><Button success disabled> Disabled Regular Success</Button></td>
 
             </tr>
@@ -53,7 +53,7 @@ function Components() {
               <th>Danger</th>
               <td><Button danger small>Small Danger Button</Button></td>
               <td><Button danger>Regular Danger Button</Button></td>
-              <td><Button danger medium>Large Danger Button</Button></td>
+              <td><Button danger large>Large Danger Button</Button></td>
               <td><Button danger disabled>Disabled Regular Danger</Button></td>
 
             </tr>
@@ -61,7 +61,7 @@ function Components() {
               <th>Warning</th>
               <td><Button warning small>Small Warning Button</Button></td>
               <td><Button warning>Regular Warning Button</Button></td>
-              <td><Button warning medium>Large Warning Button</Button></td>
+              <td><Button warning large>Large Warning Button</Button></td>
               <td><Button warning disabled>Disabled Regular Warning</Button></td>
 
             </tr>
