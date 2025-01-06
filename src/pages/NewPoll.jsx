@@ -57,7 +57,21 @@ function NewPoll() {
             onDelete={onDelete}
           />
 
-          <Button className="mb-5" p-2 medium small success onClick={() => {}}>
+          <Button
+            className={`mb-5 mt-4 ${
+              names.length > 0
+                ? 'bg-green-500'
+                : 'bg-gray-300 cursor-not-allowed'
+            }`}
+            medium
+            success={names.length > 0}
+            disabled={names.length === 0} // Disable button when no names
+            onClick={() => {
+              if (names.length > 0) {
+                alert('Submit Successful!')
+              }
+            }}
+          >
             Submit
           </Button>
         </div>
