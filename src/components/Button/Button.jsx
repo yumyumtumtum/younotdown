@@ -55,7 +55,7 @@ function Button({
 
   // Base classes for all buttons
   const baseClasses =
-    'w-fit inline-flex items-center justify-center font-medium focus:outline-none transition'
+    'w-fit inline-flex items-center justify-center font-medium focus:outline-none transition text-nowrap'
 
   return (
     <button
