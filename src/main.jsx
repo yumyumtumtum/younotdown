@@ -6,8 +6,7 @@ import Plan from './pages/Plan'
 import NewPoll from './pages/NewPoll'
 import Voting from './pages/Voting'
 import Components from './pages/Components'
-import Db from './pages/Db'
-
+import Users from './pages/Users'
 function Main() {
   return (
     <BrowserRouter>
@@ -18,7 +17,7 @@ function Main() {
         <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Voting" element={<Voting />} />
         <Route exact path="/Components" element={<Components />} />
-        <Route exact path="/Db" element={<Db />} />
+        <Route exact path="/Users" element={<Users />} />
       </Routes>
     </BrowserRouter>
   )
