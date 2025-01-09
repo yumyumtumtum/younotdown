@@ -39,14 +39,14 @@ const useFirestore = (collectionName, fields) => {
   }, [collectionName])
 
   // Effect hook to initialize the new document data with empty fields.
-  useEffect(() => {
-    // Dynamically create the initial document structure based on the fields passed.
-    const initialFields = fields.reduce(
-      (acc, field) => ({ ...acc, [field]: '' }),
-      {},
-    )
-    setNewDocument(initialFields) // Set the initial document structure in the state.
-  }, [fields])
+  // useEffect(() => {
+  //   // Dynamically create the initial document structure based on the fields passed.
+  //   const initialFields = fields.reduce(
+  //     (acc, field) => ({ ...acc, [field]: '' }),
+  //     {},
+  //   )
+  //   setNewDocument(initialFields) // Set the initial document structure in the state.
+  // }, [fields])
 
   // Return the necessary values and functions so they can be used in a component.
   return {
