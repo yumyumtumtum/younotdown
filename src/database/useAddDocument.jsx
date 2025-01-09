@@ -1,5 +1,5 @@
 import { addDoc } from 'firebase/firestore' // Import Firestore's addDoc function to add documents to a collection.
-import db from '../../firebase'
+import db from '../firebase'
 
 // This custom hook will be used to add new documents to a Firestore collection.
 const useAddDocument = (collectionName) => {

@@ -1,5 +1,5 @@
 import { deleteDoc, doc } from 'firebase/firestore' // Import Firestore's deleteDoc function and doc function for referencing documents.
-import db from '../../firebase'
+import db from '../firebase'
 
 // This custom hook will be used to delete a document from a Firestore collection.
 const useDeleteDocument = (collectionName) => {

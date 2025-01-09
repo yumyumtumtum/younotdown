@@ -1,5 +1,5 @@
 import React, { useState } from 'react' // Import React and useState for state management.
-import useFirestore from '../components/Db/useFirestore' // Import the custom hook to interact with Firestore.
+import useFirestore from '../database/useFirestore' // Import the custom hook to interact with Firestore.
 
 const Users = () => {
   // Define the fields we expect in the user document.

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { onSnapshot, collection } from 'firebase/firestore'
-import db from '../../firebase'
+import db from '../firebase'
 import useAddDocument from './useAddDocument'
 import useUpdateDocument from './useUpdateDocument'
 import useDeleteDocument from './useDeleteDocument'

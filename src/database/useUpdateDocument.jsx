@@ -1,5 +1,5 @@
 import { updateDoc, doc } from 'firebase/firestore' // Import Firestore's updateDoc function and doc function for referencing documents.
-import db from '../../firebase'
+import db from '../firebase'
 
 // This custom hook will be used to update an existing document in a Firestore collection.
 const useUpdateDocument = (collectionName) => {
