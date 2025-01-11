@@ -25,7 +25,9 @@ function NewPoll() {
 
   const handleAddpoll = async () => {
     const response = await addDoc(collection(db, 'poll'), {
-      name: 'third poll',
+      ...Object.fromEntries(
+        names.map((name, index) => [`name${index + 1}`, name]),
+      ),
     })
     console.log(response)
   }
@@ -78,7 +80,7 @@ function NewPoll() {
 
       {thenewpoll}
 
-      <Button medium onClick={handleAddpoll}>
+      <Button className="" medium onClick={handleAddpoll}>
         Submit
       </Button>
     </div>
