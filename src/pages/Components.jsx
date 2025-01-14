@@ -1,8 +1,39 @@
-function Components() {
-  const BUTTON_SIZES = ['small', 'medium', 'large']
+import _map from 'lodash/map'
+import _capitalize from 'lodash/capitalize'
 
-  const capitalizedSizes = BUTTON_SIZES.map((size) => size.toUpperCase())
-  console.log(capitalizedSizes)
+function Components() {
+  const BUTTON_VARIATIONS = ['small', 'medium', 'large', 'disabled']
+
+  const primaryButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button {...{ [variant]: true }} >{_capitalize(variant)} Primary Button</Button>
+    </td>
+  })
+
+  const secondaryButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button secondary {...{ [variant]: true }} >{_capitalize(variant)} Secondary Button</Button>
+    </td>
+  })
+
+  const successButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button success {...{ [variant]: true }} >{_capitalize(variant)} Success Button</Button>
+    </td>
+  })
+
+  const dangerButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button danger {...{ [variant]: true }} >{_capitalize(variant)} Danger Button</Button>
+    </td>
+  })
+
+  const warningButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button warning {...{ [variant]: true }} >{_capitalize(variant)} Warning Button</Button>
+    </td>
+  })
+
 
   return (
     <div className="py-12 px-24 flex flex-col gap-y-8">
@@ -33,41 +64,24 @@ function Components() {
           <tbody>
             <tr>
               <th>Primary</th>
-              <td><Button small>Small Primary Button</Button></td>
-              <td><Button>Regular Primary Button</Button></td>
-              <td><Button large>Large Primary Button</Button></td>
-              <td><Button disabled>Disabled Regular Primary</Button></td>
+              {primaryButtonVariations}
             </tr>
             <tr>
               <th>Secondary</th>
-              <td><Button secondary small>Small Secondary Button</Button></td>
-              <td><Button secondary>Regular Secondary Button</Button></td>
-              <td><Button secondary large>Large Secondary Button</Button></td>
-              <td><Button secondary disabled>Disabled Regular Secondary</Button></td>
-
+              {secondaryButtonVariations}
             </tr>
             <tr>
               <th>Success</th>
-              <td><Button success small>Small Success Button</Button></td>
-              <td><Button success>Regular Success Button</Button></td>
-              <td><Button success large>Large Success Button</Button></td>
-              <td><Button success disabled> Disabled Regular Success</Button></td>
-
+              {successButtonVariations}
             </tr>
             <tr>
               <th>Danger</th>
-              <td><Button danger small>Small Danger Button</Button></td>
-              <td><Button danger>Regular Danger Button</Button></td>
-              <td><Button danger large>Large Danger Button</Button></td>
-              <td><Button danger disabled>Disabled Regular Danger</Button></td>
+              {dangerButtonVariations}
 
             </tr>
             <tr>
               <th>Warning</th>
-              <td><Button warning small>Small Warning Button</Button></td>
-              <td><Button warning>Regular Warning Button</Button></td>
-              <td><Button warning large>Large Warning Button</Button></td>
-              <td><Button warning disabled>Disabled Regular Warning</Button></td>
+              {warningButtonVariations}
 
             </tr>
           </tbody>
