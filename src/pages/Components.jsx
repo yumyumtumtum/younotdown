@@ -1,8 +1,39 @@
-function Components() {
-  const BUTTON_SIZES = ['small', 'medium', 'large']
+import _map from 'lodash/map'
+import _capitalize from 'lodash/capitalize'
 
-  const capitalizedSizes = BUTTON_SIZES.map((size) => size.toUpperCase())
-  console.log(capitalizedSizes)
+function Components() {
+  const BUTTON_VARIATIONS = ['small', 'medium', 'large', 'disabled']
+
+  const primaryButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button {...{ [variant]: true }} >{_capitalize(variant)} Primary Button</Button>
+    </td>
+  })
+
+  const secondaryButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button secondary {...{ [variant]: true }} >{_capitalize(variant)} Secondary Button</Button>
+    </td>
+  })
+
+  const successButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button success {...{ [variant]: true }} >{_capitalize(variant)} Success Button</Button>
+    </td>
+  })
+
+  const dangerButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button danger {...{ [variant]: true }} >{_capitalize(variant)} Danger Button</Button>
+    </td>
+  })
+
+  const warningButtonVariations = _map(BUTTON_VARIATIONS, variant => {
+    return <td>
+      <Button warning {...{ [variant]: true }} >{_capitalize(variant)} Warning Button</Button>
+    </td>
+  })
+
 
   return (
     <div className="py-12 px-24 flex flex-col gap-y-8">
@@ -32,104 +63,26 @@ function Components() {
           </thead>
           <tbody>
             <tr>
-              <th className="text-right pr-4">Primary</th>
-              <td>
-                <Button small>Small Primary Button</Button>
-              </td>
-              <td>
-                <Button>Regular Primary Button</Button>
-              </td>
-              <td>
-                <Button medium>Large Primary Button</Button>
-              </td>
-              <td>
-                <Button disabled>Disabled Regular Primary</Button>
-              </td>
+              <th>Primary</th>
+              {primaryButtonVariations}
             </tr>
             <tr>
-              <th className="text-right pr-4">Secondary</th>
-              <td>
-                <Button secondary small>
-                  Small Secondary Button
-                </Button>
-              </td>
-              <td>
-                <Button secondary>Regular Secondary Button</Button>
-              </td>
-              <td>
-                <Button secondary medium>
-                  Large Secondary Button
-                </Button>
-              </td>
-              <td>
-                <Button secondary disabled>
-                  Disabled Regular Secondary
-                </Button>
-              </td>
+              <th>Secondary</th>
+              {secondaryButtonVariations}
             </tr>
             <tr>
-              <th className="text-right pr-4">Success</th>
-              <td>
-                <Button success small>
-                  Small Success Button
-                </Button>
-              </td>
-              <td>
-                <Button success>Regular Success Button</Button>
-              </td>
-              <td>
-                <Button success medium>
-                  Large Success Button
-                </Button>
-              </td>
-              <td>
-                <Button success disabled>
-                  {' '}
-                  Disabled Regular Success
-                </Button>
-              </td>
+              <th>Success</th>
+              {successButtonVariations}
             </tr>
             <tr>
-              <th className="text-right pr-4">Danger</th>
-              <td>
-                <Button danger small>
-                  Small Danger Button
-                </Button>
-              </td>
-              <td>
-                <Button danger>Regular Danger Button</Button>
-              </td>
-              <td>
-                <Button danger medium>
-                  Large Danger Button
-                </Button>
-              </td>
-              <td>
-                <Button danger disabled>
-                  Disabled Regular Danger
-                </Button>
-              </td>
+              <th>Danger</th>
+              {dangerButtonVariations}
+
             </tr>
             <tr>
-              <th className="text-right pr-4">Warning</th>
-              <td>
-                <Button warning small>
-                  Small Warning Button
-                </Button>
-              </td>
-              <td>
-                <Button warning>Regular Warning Button</Button>
-              </td>
-              <td>
-                <Button warning medium>
-                  Large Warning Button
-                </Button>
-              </td>
-              <td>
-                <Button warning disabled>
-                  Disabled Regular Warning
-                </Button>
-              </td>
+              <th>Warning</th>
+              {warningButtonVariations}
+
             </tr>
           </tbody>
         </table>
