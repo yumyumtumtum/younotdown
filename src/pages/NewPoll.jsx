@@ -7,6 +7,7 @@ function NewPoll() {
   const [pollType, setPollType] = useState('one')
   const [partySize, setPartySize] = useState(1)
   const [names, setNames] = useState([])
+  const [pollName, setPollName] = useState('')
 
   const [thenewpoll, setNewPoll] = useState(null)
 
@@ -26,27 +27,17 @@ function NewPoll() {
   const handleAddpoll = async () => {
     try {
       const docRef = await addDoc(collection(db, 'poll'), {
-        // This code takes the array of names and turns it into an object
-        // It loops through the array and for each item, it creates a new key
-        // on the object with the name of the key being "name1", "name2", etc.
-        // and the value of that key is the actual name
-        // So if the array of names is ["John", "Jane", "Bob"]
-        // the resulting object would be {name1: "John", name2: "Jane", name3: "Bob"}
-        ...Object.fromEntries(
-          names.map((name, index) => {
-            const key = `name${index + 1}` // create the key name
-            const value = name // the value of that key is the name
-            return [key, value] // return an array with the key and value
-          }),
-          // OR         names.map((name, index) => [`name${index + 1}`, name]),
-        ),
+        name: pollName,
+        participants: names.map((name) => {
+          return { name, answer: '' }
+        }),
       })
 
       // Get the document ID
       const docId = docRef.id
 
       // Redirect to another page with the document ID in the URL
-      window.location.href = `/poll-details/${docId}`
+      window.location.href = `/poll/${docId}`
     } catch (error) {
       console.error('ERROR ADDING POLL:', error)
     }
@@ -56,17 +47,28 @@ function NewPoll() {
     {
       name: 'Poll Details',
       content: (
-        <div>
-          <strong> Poll Type</strong>
-          <Select
-            className="ml-8 border-2 p-1 rounded-lg"
-            value={pollType}
-            options={[
-              { key: 'down', value: 'Are you Down?' },
-              { key: 'soon', value: 'Coming Soon?', disabled: true },
-            ]}
-            onChange={setPollType}
-          />
+        <div className="flex flex-col gap-8">
+          <div>
+            <strong>Poll Name</strong>
+            <input
+              className="ml-8 border-2 p-1 rounded-lg"
+              value={pollName}
+              onChange={(e) => setPollName(e.target.value)}
+            ></input>
+          </div>
+
+          <div>
+            <strong> Poll Type</strong>
+            <Select
+              className="ml-8 border-2 p-1 rounded-lg"
+              value={pollType}
+              options={[
+                { key: 'down', value: 'Are you Down?' },
+                { key: 'soon', value: 'Coming Soon?', disabled: true },
+              ]}
+              onChange={setPollType}
+            />
+          </div>
         </div>
       ),
     },
