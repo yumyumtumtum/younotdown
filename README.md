@@ -1,5 +1,3 @@
-# JONATHAN U BETTER KNOW HOT TO DO THIS
-
 
 # Getting Started with Create React App
 
