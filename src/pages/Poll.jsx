@@ -31,6 +31,10 @@ function PollDetails() {
     })
   })
 
+  const pollStatus = useMemo(() => {
+    return pollData?.status
+  })
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -75,6 +79,8 @@ function PollDetails() {
       <h2>{pollName} Details</h2>
 
       {pollParticipants}
+
+      {pollStatus}
 
       <Button onClick={changePollData}>update doc</Button>
     </div>

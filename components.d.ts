@@ -8,7 +8,7 @@ declare global{
 	const LandingPage: typeof import('./src/pages/LandingPage')['default']
 	const NewPoll: typeof import('./src/pages/NewPoll')['default']
 	const Plan: typeof import('./src/pages/Plan')['default']
-	const PollDetails: typeof import('./src/pages/PollDetails')['default']
+	const PollDetails: typeof import('./src/pages/Poll')['default']
 	const YouDown: typeof import('./src/pages/Voting')['default']
 	const Button: typeof import('./src/components/Button/Button')['default']
 	const CreatePollButton: typeof import('./src/components/Button/CreatePollButton')['default']

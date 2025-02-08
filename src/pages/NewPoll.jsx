@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Button from '../components/Button/Button'
 import { collection, addDoc } from 'firebase/firestore'
 import db from '../firebase'
@@ -9,12 +9,19 @@ function NewPoll() {
   const [names, setNames] = useState([])
   const [pollName, setPollName] = useState('')
 
-  const [thenewpoll, setNewPoll] = useState(null)
-
   const handleNameChange = (index, newName) => {
     const updatedNames = [...names]
     updatedNames[index] = newName
     setNames(updatedNames)
+  }
+
+  const nameListRef = useRef(null)
+  const onAdd = (index) => {
+    setPartySize(partySize + 1)
+
+    setTimeout(() => {
+      document.getElementById(`name-${index + 1}`).focus()
+    }, 1)
   }
 
   const onDelete = (index) => {
@@ -29,7 +36,7 @@ function NewPoll() {
       const docRef = await addDoc(collection(db, 'poll'), {
         name: pollName,
         participants: names.map((name) => {
-          return { name, answer: '' }
+          return { name, answer: '', status: 'running' }
         }),
       })
 
@@ -86,10 +93,12 @@ function NewPoll() {
           </Button>
 
           <NameList
+            innerRef={nameListRef}
             numPeople={partySize}
             names={names}
             onNameChange={handleNameChange}
             onDelete={onDelete}
+            addName={(value) => onAdd(value)}
           />
         </div>
       ),
@@ -100,9 +109,12 @@ function NewPoll() {
     <div className="">
       <Tabs tabOptions={POLL_TABS} />
 
-      {thenewpoll}
-
-      <Button className="" medium onClick={handleAddpoll}>
+      <Button
+        className=""
+        medium
+        onClick={handleAddpoll}
+        disabled={partySize < 1 || !pollName}
+      >
         Submit
       </Button>
     </div>
