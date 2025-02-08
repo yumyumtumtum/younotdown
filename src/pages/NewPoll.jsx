@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import Button from '../components/Button/Button'
 import { collection, addDoc } from 'firebase/firestore'
 import db from '../firebase'
@@ -15,7 +15,6 @@ function NewPoll() {
     setNames(updatedNames)
   }
 
-  const nameListRef = useRef(null)
   const onAdd = (index) => {
     setPartySize(partySize + 1)
 
@@ -93,7 +92,6 @@ function NewPoll() {
           </Button>
 
           <NameList
-            innerRef={nameListRef}
             numPeople={partySize}
             names={names}
             onNameChange={handleNameChange}
