@@ -17,7 +17,7 @@ function Main() {
         <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Voting" element={<Voting />} />
         <Route exact path="/Components" element={<Components />} />
-        <Route exact path="/poll/:docId" element={<Poll />} />
+        <Route exact path="/poll/:pollId" element={<Poll />} />
       </Routes>
     </BrowserRouter>
   )

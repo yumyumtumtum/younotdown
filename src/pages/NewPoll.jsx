@@ -34,8 +34,9 @@ function NewPoll() {
     try {
       const docRef = await addDoc(collection(db, 'poll'), {
         name: pollName,
+        status: 'running',
         participants: names.map((name) => {
-          return { name, answer: '', status: 'running' }
+          return { name, answer: '' }
         }),
       })
 

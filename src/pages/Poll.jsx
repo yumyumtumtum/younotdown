@@ -4,9 +4,10 @@ import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import db from '../firebase' // Assuming your Firestore instance is in a separate file
 
 import _map from 'lodash/map'
+import _find from 'lodash/find'
 
 function PollDetails() {
-  const { docId } = useParams()
+  const { pollId } = useParams()
   const [pollData, setPollData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -35,10 +36,14 @@ function PollDetails() {
     return pollData?.status
   })
 
+  const unansweredParticipant = useMemo(() => {
+    return _find(pollData?.participants, participant => !participant.answer)
+  })
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const docRef = doc(db, 'poll', docId)
+        const docRef = doc(db, 'poll', pollId)
         const docSnap = await getDoc(docRef)
 
         console.log(docSnap.data())
@@ -56,10 +61,10 @@ function PollDetails() {
     }
 
     fetchData()
-  }, [docId]) // Only re-fetch data when docId changes
+  }, [pollId]) // Only re-fetch data when docId changes
 
   const changePollData = () => {
-    const docRef = doc(db, 'poll', docId)
+    const docRef = doc(db, 'poll', pollId)
 
     updateDoc(docRef, {})
   }
@@ -77,9 +82,7 @@ function PollDetails() {
   return (
     <div className="flex flex-col h-screen w-full items-center mt-40 gap-8">
       <h2>{pollName} Details</h2>
-
-      {pollParticipants}
-
+    <SurveyInput participant={unansweredParticipant}></SurveyInput>
       {pollStatus}
 
       <Button onClick={changePollData}>update doc</Button>
