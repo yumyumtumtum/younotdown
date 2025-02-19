@@ -40,33 +40,40 @@ function PollDetails() {
     return _find(pollData?.participants, (participant) => !participant.answer)
   })
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const docRef = doc(db, 'poll', pollId)
-        const docSnap = await getDoc(docRef)
+  const fetchData = async () => {
+    try {
+      const docRef = doc(db, 'poll', pollId)
+      const docSnap = await getDoc(docRef)
 
-        console.log(docSnap.data())
+      console.log(docSnap.data())
 
-        if (docSnap.exists()) {
-          setPollData(docSnap.data())
-        } else {
-          setError('No such document found.')
-        }
-      } catch (error) {
-        setError('Error fetching data: ' + error.message)
-      } finally {
-        setIsLoading(false)
+      if (docSnap.exists()) {
+        setPollData(docSnap.data())
+      } else {
+        setError('No such document found.')
       }
+    } catch (error) {
+      setError('Error fetching data: ' + error.message)
+    } finally {
+      setIsLoading(false)
     }
+  }
 
+  useEffect(() => {
     fetchData()
   }, [pollId]) // Only re-fetch data when docId changes
 
   const changePollData = () => {
     const docRef = doc(db, 'poll', pollId)
 
-    updateDoc(docRef, {})
+    updateDoc(docRef, {
+      participants: [
+        { name: 1, answer: 'yes' },
+        { name: 2, answer: '' },
+        { name: 3, answer: '' },
+      ],
+    })
+    fetchData()
   }
 
   // Poll States
