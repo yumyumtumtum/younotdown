@@ -36,8 +36,8 @@ function PollDetails() {
     return pollData?.status
   })
 
-  const unansweredParticipant = useMemo(() => {
-    return _find(pollData?.participants, participant => !participant.answer)
+  const nextUnansweredParticipant = useMemo(() => {
+    return _find(pollData?.participants, (participant) => !participant.answer)
   })
 
   useEffect(() => {
@@ -82,7 +82,7 @@ function PollDetails() {
   return (
     <div className="flex flex-col h-screen w-full items-center mt-40 gap-8">
       <h2>{pollName} Details</h2>
-    <SurveyInput participant={unansweredParticipant}></SurveyInput>
+      <SurveyInput participant={nextUnansweredParticipant}></SurveyInput>
       {pollStatus}
 
       <Button onClick={changePollData}>update doc</Button>
