@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 
-function SurveyInput({participant}) {
+function SurveyInput({participant, input}) {
   const participantName = useMemo(() => {
       return participant?.name
     })
@@ -9,8 +9,8 @@ function SurveyInput({participant}) {
   <div>
     {participantName}
     <div className="space-x-10">
-      <Button large>I'm Down</Button>
-      <Button large danger>I'm Not down</Button>
+      <Button large onClick={() => input('Down')}>I'm Down</Button>
+      <Button large danger onClick={() => input('Not Down')}>I'm Not down</Button>
     </div>
   </div>
   )
