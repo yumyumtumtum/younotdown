@@ -13,9 +13,20 @@ function PollDetails() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  const pollResults = useMemo(() => {
+    if(pollData?.participants){
+      const yesCount = pollData.participants.filter((participant) => participant.answer === "Down").length
+      const noCount = pollData.participants.filter((participant) => participant.answer === "Not Down").length
+      return { Yes: yesCount, No: noCount}
+    }
+
+    return { Yes: 0, No: 0}
+  }, [pollData?.participants])
+
   const pollName = useMemo(() => {
     return pollData?.name
   })
+
   const pollParticipants = useMemo(() => {
     return _map(pollData?.participants, ({ name, answer }, index) => {
       return (
@@ -92,9 +103,17 @@ function PollDetails() {
     updateDoc(docRef, {
       participants: participantData,
     })
+    
+    const allAnswered = participantData.every((participant) => participant.answer !== '')
+  
+    if(allAnswered){
+      updateDoc(docRef, {
+        status: 'Comeplete'
+      })
+    }
+
     fetchData()
   }
-
 
   // Poll States
   if (isLoading) {
@@ -109,7 +128,20 @@ function PollDetails() {
   return (
     <div className="flex flex-col h-screen w-full items-center mt-40 gap-8">
       <h2>{pollName} Details</h2>
-      <SurveyInput participant={nextUnansweredParticipant} input={setParticipantAnswer}></SurveyInput>
+
+      {nextUnansweredParticipant ?
+      (<SurveyInput participant={nextUnansweredParticipant} input={setParticipantAnswer}></SurveyInput>) :
+      (<h3>Results</h3>)}
+      <div>
+        {pollData.participants.map((participant, index) => (
+          <div key={index}>
+            <strong>{participant.name}:</strong> {participant.answer}
+          </div>
+        ))}
+      </div>
+      <div>Yes: {pollResults.Yes}</div>
+      <div>No: {pollResults.No}</div>
+
       {pollStatus}
 
       <Button onClick={changePollData}>update doc</Button>
