@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from 'react'
 
 function SurveyInput({participant, input}) {
   const participantName = useMemo(() => {
+      console.log(participant)
       return participant?.name
     })
   return (

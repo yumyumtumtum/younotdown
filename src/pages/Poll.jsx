@@ -6,6 +6,7 @@ import db from '../firebase' // Assuming your Firestore instance is in a separat
 import _map from 'lodash/map'
 import _find from 'lodash/find'
 import _findIndex from 'lodash/findIndex'
+import SurveyResults from '../components/survey/results'
 
 function PollDetails() {
   const { pollId } = useParams()
@@ -13,39 +14,8 @@ function PollDetails() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const pollResults = useMemo(() => {
-    if(pollData?.participants){
-      const yesCount = pollData.participants.filter((participant) => participant.answer === "Down").length
-      const noCount = pollData.participants.filter((participant) => participant.answer === "Not Down").length
-      return { Yes: yesCount, No: noCount}
-    }
-
-    return { Yes: 0, No: 0}
-  }, [pollData?.participants])
-
   const pollName = useMemo(() => {
     return pollData?.name
-  })
-
-  const pollParticipants = useMemo(() => {
-    return _map(pollData?.participants, ({ name, answer }, index) => {
-      return (
-        <div key={`${index}-participant`}>
-          <div>
-            <strong>name:</strong>
-            {name}
-          </div>
-          <div>
-            <strong>answer:</strong>
-            {answer}
-          </div>
-        </div>
-      )
-    })
-  })
-
-  const pollStatus = useMemo(() => {
-    return pollData?.status
   })
 
   const nextUnansweredParticipantIndex = useMemo(() => {
@@ -64,8 +34,6 @@ function PollDetails() {
       const docRef = doc(db, 'poll', pollId)
       const docSnap = await getDoc(docRef)
 
-      console.log(docSnap.data())
-
       if (docSnap.exists()) {
         setPollData(docSnap.data())
       } else {
@@ -81,19 +49,6 @@ function PollDetails() {
   useEffect(() => {
     fetchData()
   }, [pollId]) // Only re-fetch data when docId changes
-
-  const changePollData = () => {
-    const docRef = doc(db, 'poll', pollId)
-
-    updateDoc(docRef, {
-      participants: [
-        { name: 1, answer: 'yes' },
-        { name: 2, answer: '' },
-        { name: 3, answer: '' },
-      ],
-    })
-    fetchData()
-  }
 
   const setParticipantAnswer = (value) => {
     const docRef = doc(db, 'poll', pollId)
@@ -127,24 +82,12 @@ function PollDetails() {
   }
   return (
     <div className="flex flex-col h-screen w-full items-center mt-40 gap-8">
-      <h2>{pollName} Details</h2>
+      <h2>{pollName}</h2>
 
       {nextUnansweredParticipant ?
-      (<SurveyInput participant={nextUnansweredParticipant} input={setParticipantAnswer}></SurveyInput>) :
-      (<h3>Results</h3>)}
-      <div>
-        {pollData.participants.map((participant, index) => (
-          <div key={index}>
-            <strong>{participant.name}:</strong> {participant.answer}
-          </div>
-        ))}
-      </div>
-      <div>Yes: {pollResults.Yes}</div>
-      <div>No: {pollResults.No}</div>
-
-      {pollStatus}
-
-      <Button onClick={changePollData}>update doc</Button>
+      (<SurveyInput participant={nextUnansweredParticipant} input={setParticipantAnswer}></SurveyInput>)
+      :null}
+      {pollData.status === 'Comeplete' && <SurveyResults participants={pollData.participants}/>}
     </div>
   )
 }
