@@ -6,7 +6,7 @@ import Plan from './pages/Plan'
 import NewPoll from './pages/NewPoll'
 import Voting from './pages/Voting'
 import Components from './pages/Components'
-import PollDetails from './pages/PollDetails.jsx'
+import Poll from './pages/Poll'
 function Main() {
   return (
     <BrowserRouter>
@@ -17,7 +17,7 @@ function Main() {
         <Route exact path="/Home" element={<Home />} />
         <Route exact path="/Voting" element={<Voting />} />
         <Route exact path="/Components" element={<Components />} />
-        <Route exact path="/poll-details/:docId" element={<PollDetails />} />
+        <Route exact path="/poll/:pollId" element={<Poll />} />
       </Routes>
     </BrowserRouter>
   )
