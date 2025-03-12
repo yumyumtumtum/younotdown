@@ -22,4 +22,5 @@ declare global{
 	const Header: typeof import('./src/components/header/Title')['default']
 	const Select: typeof import('./src/components/input/Select')['default']
 	const SurveyInput: typeof import('./src/components/survey/input')['default']
+	const SurveyResults: typeof import('./src/components/survey/results')['default']
 }
