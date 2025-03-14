@@ -21,6 +21,9 @@ declare global{
 	const PollForm: typeof import('./src/components/PollForm/PollForm')['default']
 	const Header: typeof import('./src/components/header/Title')['default']
 	const Select: typeof import('./src/components/input/Select')['default']
+<<<<<<< HEAD
 	const SurveyInput: typeof import('./src/components/survey/input')['default']
 	const SurveyResults: typeof import('./src/components/survey/results')['default']
+=======
+>>>>>>> main
 }
